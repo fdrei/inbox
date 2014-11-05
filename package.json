@@ -1,0 +1,26 @@
+{
+  "name": "inbox",
+  "version": "0.0.1",
+  "description": "cross-platform email client",
+  "main": "./src/app/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/nodewebkit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fdrei/inbox.git"
+  },
+  "keywords": [
+    "email"
+  ],
+  "author": "fdrei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fdrei/inbox/issues"
+  },
+  "homepage": "https://github.com/fdrei/inbox",
+  "dependencies": {
+    "nodewebkit": "^0.10.5"
+  }
+}
