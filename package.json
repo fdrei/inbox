@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/fdrei/inbox",
   "dependencies": {
-    "nodewebkit": "^0.10.5"
+    "nodewebkit": "^0.10.5",
+    "nedb": "^0.11.1"
   }
 }
