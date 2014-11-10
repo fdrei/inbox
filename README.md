@@ -1,7 +1,16 @@
 inbox
 =====
 
-notifications, calendar and contacts in one place
+One app to rule messages, contacts and calendars.
+
+
+TODO
+----------------------------------------------------
+- [ ] @mupat add Gulpfile and tasks for compiling etc.
+- [ ] @maccypher add design documents in a 'specs' folder?
+- [ ] @kr1sp1n add ContactService and MessageService
+
+
 
 
 Install
@@ -40,4 +49,3 @@ Structure
                            ┌───┴──┐
                            │ nedb │
                            └──────┘
-                           
