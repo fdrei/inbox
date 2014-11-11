@@ -3,6 +3,8 @@ inbox
 
 One app to rule messages, contacts and calendars.
 
+[![Build Status](https://travis-ci.org/fdrei/inbox.svg)](https://travis-ci.org/fdrei/inbox)
+[![Coverage Status](https://coveralls.io/repos/fdrei/inbox/badge.png?branch=master)](https://coveralls.io/r/fdrei/inbox?branch=master)
 
 TODO
 ----------------------------------------------------

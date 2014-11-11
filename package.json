@@ -4,7 +4,7 @@
   "description": "cross-platform email client",
   "main": "./src/app/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "make test",
     "start": "./node_modules/.bin/nodewebkit"
   },
   "repository": {
@@ -26,5 +26,29 @@
   "dependencies": {
     "nodewebkit": "^0.10.5",
     "nedb": "^0.11.1"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "should": "^4.3.0",
+    "mocha-spec-cov-alt": "^0.1.1",
+    "mocha-lcov-reporter": "0.0.1",
+    "blanket": "^1.1.6",
+    "coveralls": "^2.11.2"
+  },
+  "config": {
+    "blanket": {
+      "pattern": [
+        "/src/",
+        "/src/core"
+      ],
+      "loader": "./node-loaders/coffee-script",
+      "data-cover-never": [
+        "node_modules",
+        "test"
+      ],
+      "spec-cov": {
+        "threshold": 100
+      }
+    }
   }
 }
