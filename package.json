@@ -25,7 +25,8 @@
   "homepage": "https://github.com/fdrei/inbox",
   "dependencies": {
     "nodewebkit": "^0.10.5",
-    "nedb": "^0.11.1"
+    "nedb": "^0.11.1",
+    "coffee-script": "^1.8.0"
   },
   "devDependencies": {
     "mocha": "^1.21.4",
