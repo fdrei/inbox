@@ -11,9 +11,9 @@ one app to rule messages, contacts and calendars
 
 TODO
 ----------------------------------------------------
-- [ ] [@mupat][@mupat] add Gulpfile and tasks for compiling etc.
-- [ ] [@maccypher][@maccypher] add design documents in a 'specs' folder?
-- [ ] [@kr1sp1n][@kr1sp1n] add ContactService and MessageService
+- [ ] add Gulpfile and tasks for compiling etc. [@mupat][@mupat]
+- [ ] add design documents in a 'specs' folder? [@maccypher][@maccypher]
+- [ ] add ContactService and MessageService [@kr1sp1n][@kr1sp1n]
 
 
 
