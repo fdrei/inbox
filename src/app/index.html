@@ -7,7 +7,51 @@
     <h1>Hello World!</h1>
     We are using node.js <script>document.write(process.version)</script>.
     <script charset="utf-8">
+      var gui = require('nw.gui');
+      // Get the current window
+      var win = gui.Window.get();
+
       var cwd = process.cwd();
+      var auth = function() {
+        var options = {
+          client_id: "695555703893-c0ejog53pgrs9tmq8g5osn7h7r4tclvc.apps.googleusercontent.com",
+          redirect_uri: "urn:ietf:wg:oauth:2.0:oob",
+          response_type: "code",
+          scope: 'profile email https://mail.google.com/'
+        }
+        var authUrl = 'https://accounts.google.com/o/oauth2/auth';
+        var key = null;
+        var i = 0;
+        for (key in options) {
+          if(i==0) {
+            authUrl += '?'
+          } else {
+            authUrl += '&'
+          }
+          authUrl += key + '=' + options[key];
+          i++;
+        }
+        // Create a new window and get it
+        var auth_win = gui.Window.get(
+          window.open(authUrl, '_blank', 'location=no,toolbar=no')
+        );
+        // And listen to new window's focus event
+        auth_win.on('loaded', function() {
+          var match = auth_win.title.match(/Success code=(.*)/);
+          if(match!=null) {
+            var code = match[1];
+            console.log(code);
+            document.getElementById('code').innerHTML = "Signed In with token: " + code;
+            document.getElementById('signin').innerHTML = "";
+            auth_win.close(true);
+          }
+
+        });
+      }
     </script>
+    <div>
+      <a id="signin" onclick="auth()" href="#">Sign In With Google!</a>
+      <p id="code"></p>
+    </div>
   </body>
 </html>
