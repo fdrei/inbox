@@ -2,25 +2,34 @@
 
 core = require("#{__dirname}/../src/core")()
 
+# listen on any errors
+core.on 'error', (err)->
+  console.log err
+
 # you can listen on specific events inside the PersonService
-core.persons.on 'Person.add', (person, x)->
-  console.log "new event 'Person.add': #{person.name}"
+core.Person.on 'Person.add', (person, x)->
+  console.log "New event 'Person.add': #{person.name}"
 
 # without callback function
-core.persons.add name: 'Patrick'
+core.Person.add name: 'Patrick'
+core.Person.add name: 'Krispin'
 
 # with callback function
-core.persons.add name: 'Burkhard', (err, person)->
-  console.log "with callback: #{person.name}"
+core.Person.add name: 'Burkhard', (err, person)->
+  console.log "With callback: #{person.name}"
 
-# find all persons
-core.persons.find {}, {}, (err, persons)->
+# get all persons
+core.Person.getAll (err, persons)->
   console.log "all persons:"
   console.log persons
 
   # get person by its id
-  core.persons.get persons[0]._id, (err, person)->
+  core.Person.get persons[0]._id, (err, person)->
     console.log "get person by its id #{person._id}: #{person.name}"
 
-core.persons.remove name: 'Burkhard', {}, (err, count)->
-  console.log "removed #{count} persons: #{person.name}"
+    core.Person.remove name: 'Burkhard', (err, count)->
+      console.log "removed #{count} persons"
+
+      # remove all
+      core.Person.removeAll (err, count)->
+        console.log "removed all #{count} persons"

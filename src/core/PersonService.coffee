@@ -9,8 +9,8 @@ class PersonService extends EventEmitter
 
   constructor: (@opts)->
     debug "constructor"
-    @db = @opts?.db or require('nedb')
-    @persons = @opts?.persons or new @db()
+    # datastore
+    @persons = @opts?.persons
 
   add: (person, done)->
     debug "add new person #{inspect person}"
@@ -41,6 +41,13 @@ class PersonService extends EventEmitter
   remove: (query, done)->
     options = {}
     @persons.remove query, options, (err, numRemoved)=>
+      @emit 'error', err if err?
+      done err, numRemoved if done?
+
+  removeAll: (done)->
+    options =
+       multi: true
+    @persons.remove {}, options, (err, numRemoved)=>
       @emit 'error', err if err?
       done err, numRemoved if done?
 

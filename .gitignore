@@ -32,3 +32,4 @@ build
 cov.html
 cov.xml
 xunit.xml
+db
