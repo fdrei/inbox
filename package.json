@@ -34,7 +34,10 @@
     "mocha-spec-cov-alt": "^0.1.1",
     "mocha-lcov-reporter": "0.0.1",
     "blanket": "^1.1.6",
-    "coveralls": "^2.11.2"
+    "coveralls": "^2.11.2",
+    "mocha-cobertura-reporter": "^1.0.4",
+    "debug": "^2.1.0",
+    "sinon": "^1.11.1"
   },
   "config": {
     "blanket": {

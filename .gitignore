@@ -30,3 +30,5 @@ node_modules
 build
 .coveralls.yml
 cov.html
+cov.xml
+xunit.xml

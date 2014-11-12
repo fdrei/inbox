@@ -1,0 +1,20 @@
+# file: shippable.yml
+
+# language setting
+language: node_js
+
+# version numbers, testing against two versions of node
+node_js:
+  - 0.10
+  - 0.11
+
+# Create directories for test and coverage reports
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+
+# Running make test to run your test cases
+script:
+  - make test-report UNIT_REPORT_PATH=./shippable/testresults/xunit.xml COV_REPORT_PATH=./shippable/codecoverage/cov.xml
+
+archive: true

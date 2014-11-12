@@ -6,6 +6,8 @@ MOCHA_BIN = $(BIN_DIR)/mocha
 TEST_DIR = ./test
 TEST_UNIT_DIR = $(TEST_DIR)/unit
 MOCHA_REPORTER = spec
+UNIT_REPORT_PATH = "./xunit.xml"
+COV_REPORT_PATH = "./cov.xml"
 
 install:
 	npm install
@@ -20,6 +22,15 @@ test-unit: $(MOCHA_BIN)
 
 test-watch:
 	$(MOCHA_BIN) --reporter $(MOCHA_REPORTER) --watch $(TEST_UNIT_DIR)
+
+
+# for shippable.com
+cov-report:
+	$(MOCHA_BIN) $(TEST_UNIT_DIR) --reporter mocha-cobertura-reporter > $(COV_REPORT_PATH)
+
+test-report: cov-report
+	$(MOCHA_BIN) $(TEST_UNIT_DIR) --reporter xunit > $(UNIT_REPORT_PATH)
+
 
 cov:
 	$(MOCHA_BIN) $(TEST_UNIT_DIR) --reporter mocha-spec-cov-alt

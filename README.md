@@ -1,17 +1,19 @@
 inbox
-=====
+====================================================
 
-One app to rule messages, contacts and calendars.
+one app to rule messages, contacts and calendars
 
 [![Build Status](https://travis-ci.org/fdrei/inbox.svg)](https://travis-ci.org/fdrei/inbox)
 [![Coverage Status](https://coveralls.io/repos/fdrei/inbox/badge.png?branch=master)](https://coveralls.io/r/fdrei/inbox?branch=master)
+[![Build Status](https://api.shippable.com/projects/54624c5bc6f0803064f424df/badge?branchName=master)](https://app.shippable.com/projects/54624c5bc6f0803064f424df/builds/latest)
+
+
 
 TODO
 ----------------------------------------------------
-- [ ] @mupat add Gulpfile and tasks for compiling etc.
-- [ ] @maccypher add design documents in a 'specs' folder?
-- [ ] @kr1sp1n add ContactService and MessageService
-
+- [ ] [@mupat][@mupat] add Gulpfile and tasks for compiling etc.
+- [ ] [@maccypher][@maccypher] add design documents in a 'specs' folder?
+- [ ] [@kr1sp1n][@kr1sp1n] add ContactService and MessageService
 
 
 
@@ -23,10 +25,12 @@ Install
     npm install
 
 
+
 Run
 ----------------------------------------------------
 
     npm start
+
 
 
 Structure
@@ -51,3 +55,14 @@ Structure
                            ┌───┴──┐
                            │ nedb │
                            └──────┘
+
+
+
+
+
+
+
+
+[@maccypher]: https://github.com/maccypher "maccypher"
+[@mupat]: https://github.com/mupat "mupat"
+[@kr1sp1n]: https://github.com/kr1sp1n "kr1sp1n"
