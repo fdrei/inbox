@@ -1,4 +1,4 @@
-# file: src/core/PluginServicecoffee
+# file: src/core/PluginService.coffee
 
 debug = require('debug')('PluginService')
 inspect = require('util').inspect

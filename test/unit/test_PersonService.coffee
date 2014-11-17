@@ -1,7 +1,7 @@
 # file: test/unit/test_PersonService.coffee
 
 should = require 'should'
-sinon = require 'sinon'
+helper = require("#{__dirname}/helper")()
 inspect = require('util').inspect
 
 describe 'PersonService', ->
@@ -13,12 +13,7 @@ describe 'PersonService', ->
     @krispin = name: 'Krispin', _id: 3
 
     # stub nedb
-    @persons =
-      insert: sinon.stub()
-      find: sinon.stub()
-      findOne: sinon.stub()
-      count: sinon.stub()
-      remove: sinon.stub()
+    @persons = helper.getDatastoreStub()
 
     @service = require("#{__dirname}/../../src/core/PersonService")(
       persons: @persons
